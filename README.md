@@ -1,7 +1,7 @@
 ## 下载
 
 ```
-git clone xxxx
+git clone git@github.com:wuyunfeng8/web-pages.git
 ```
 
 ## 安装
