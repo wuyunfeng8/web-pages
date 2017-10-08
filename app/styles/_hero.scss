@@ -1,0 +1,75 @@
+.ui.hero {
+    background: #f0f0f0;
+
+    .item {
+        position: relative;
+        overflow: hidden;
+
+        .content {
+            display: flex;
+            align-items: center;
+            padding-top: 12%;
+            padding-bottom: 16%;
+
+            .container {
+                z-index: 1;
+
+                .header {
+                    font-size: 48px;
+                    margin: 0 0 16px;
+                }
+
+                .sub.header {
+                    font-size: 18px;
+                    text-transform: uppercase;
+                    letter-spacing: 3px;
+                    margin-bottom: 8px;
+                }
+
+                .description {
+                    font-size: 18px;
+                    margin-bottom: 32px;
+                    font-weight: 600;
+                }
+            }
+        }
+
+        .image {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        .action{
+            margin-bottom: 32px;
+        }
+    }
+    @media only screen and (max-width: 767px) {
+        .item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            .content {
+                order: 2;
+                .header{
+                    font-size: 36px;
+                }
+            }
+            .image{
+                position: inherit;
+                order: 1;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 1200px) {
+        .item {
+            .content {
+                height: 600px;
+            }
+        }
+    }
+}
