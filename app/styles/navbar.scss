@@ -1,0 +1,36 @@
+.ui.navbar {
+    background-color: #fff;
+
+    .content {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+
+        .header {
+            align-self: center;
+
+            img {
+                padding: 8px;
+                width: 98px;
+                box-sizing: content-box;
+            }
+        }
+
+        .menu {
+            margin-left: 56px;
+
+            .item {
+                display: inline-block;
+                font-size: 18px;
+                color: #000;
+                margin: 0 24px;
+                padding-bottom: 32px;
+                padding-top: 24px;
+            }
+
+            .item.active {
+                border-bottom: 2px solid #000;
+            }
+        }
+    }
+}
