@@ -3,8 +3,6 @@
 // 基于 Google 的 Web Starter Kit。
 // 这个 gulpfile 里定义的是一些自动化任务，用了新的 JavaScript 特性。
 // 所以，gulpfile 的名字是 gulpfile.babel.js，Babel 会处理这个文件。
-// 下面是一个视频课程，介绍了 JavaScript 的新特性：
-// https://ninghao.net/course/3032
 
 import path from 'path';
 import gulp from 'gulp';
