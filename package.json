@@ -36,6 +36,7 @@
   },
   "dependencies": {
     "enquire.js": "^2.1.6",
+    "scrollreveal": "^3.3.6",
     "semantic-ui": "^2.2.10",
     "slick-carousel": "^1.8.1"
   }

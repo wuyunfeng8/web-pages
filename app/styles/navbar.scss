@@ -1,6 +1,45 @@
 .ui.navbar {
     background-color: #fff;
 
+    &.sub{
+        border-bottom: 1px solid #ececec;
+        width: 100%;
+        background: #f8f8f8;
+        .header{
+            text-transform: uppercase;
+            color: rgba(0,0,0,0.1);
+            letter-spacing: 6px;
+            margin: 8px 0;
+
+            &:hover{
+                color: rgba(0, 0, 0, 0.85);
+                cursor: pointer;
+            }
+        }
+
+        .menu{
+            width: 100%;
+            text-align: right;
+
+            .item{
+                font-size: 16px;
+                color: rgba(0, 0, 0, 0.65);
+
+                &.active{
+                    color: rgba(0, 0, 0, 0.85);
+                }
+            }
+        }
+
+        &.fixed{
+            background: rgba(249, 249, 249, 0.9);
+
+            .header{
+                color: rgba(0, 0, 0, 0.85);
+            }
+        }
+    }
+
     .content {
         display: flex;
         flex-direction: row;
@@ -83,7 +122,7 @@
     }
 }
 @media only screen and (max-width:767px) {
-    .ui.navbar {
+    .ui.navbar:not(.sub){
         .content {
             justify-content: space-between;
 

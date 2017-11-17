@@ -3,6 +3,19 @@
     // Your custom JavaScript goes here
 
     /**
+     * scrollreveal
+     */
+
+    window.sr = ScrollReveal({
+        reset: true
+    })
+    sr.reveal('.ui.block.story .content')
+    sr.reveal('.ui.spec .statistic', 100)
+    sr.reveal('.ui.spec .details .content', 100)
+    sr.reveal('.ui.action .header')
+    sr.reveal('.ui.action .action')
+
+    /**
      * navbar
      */
 
@@ -16,6 +29,40 @@
             }
         })
 
+
+    $('.ui.sub.navbar')
+        .visibility({
+            type: 'fixed'
+        })
+
+    $('.ui.sub.navbar .menu .item')
+        .click(function() {
+            let id = $(this).attr('href')
+            let $element = $(id)
+            let position = $element.offset().top - 70
+            $('html,body').animate({
+                scrollTop: position
+            }, 500)
+        })
+
+    $('.ui.section')
+        .visibility({
+            observeChange: false,
+            once: false,
+            offset: 120,
+            onTopPassed: sectionHandle,
+            onBottomPassedReverse: sectionHandle,
+        })
+
+    function sectionHandle() {
+        let $currentSection = $(this)
+        let index = $('.ui.section').index($currentSection)
+        let $subNavMenuItem = $('.ui.sub.navbar .menu > .item')
+        let $subNavMenuActiveItem = $subNavMenuItem.eq(index)
+
+        $subNavMenuItem.filter('.active').removeClass('active')
+        $subNavMenuActiveItem.addClass('active')
+    }
     /**
      * hero
      */
@@ -42,7 +89,7 @@
         .sidebar('attach events', '.ui.navbar .menu-icon')
         .sidebar('attach events', '.ui.sidebar .close-icon')
 
-    $('.ui.navbar .menu')
+    $('#navigation .menu')
         .clone()
         .appendTo('.ui.sidebar')
 
@@ -112,28 +159,28 @@
         })
 
 
-        $('#interior-design .carousel.text')
-            .slick({
-                asNavFor: '#interior-design .carousel.image',
-                arrows: false,
-                slidesToShow: 1,
-            })
+    $('#interior-design .carousel.text')
+        .slick({
+            asNavFor: '#interior-design .carousel.image',
+            arrows: false,
+            slidesToShow: 1,
+        })
 
-        $('#interior-design .carousel.image')
-            .slick({
-                asNavFor: '#interior-design .carousel.text',
-                slidesToShow: 1,
-                dots: true,
-                prevArrow: '<button class="ui prev  button"><i class="material-icons">chevron_left</i></button>',
-                nextArrow: '<button class="ui next  button"><i class="material-icons">chevron_right</i></button>',
-                // centerMode: true,
-                responsive: [{
-                    breakpoint: 767,
-                    settings: {
-                        slidesToShow: 1
-                    }
-                }]
-            })
+    $('#interior-design .carousel.image')
+        .slick({
+            asNavFor: '#interior-design .carousel.text',
+            slidesToShow: 1,
+            dots: true,
+            prevArrow: '<button class="ui prev  button"><i class="material-icons">chevron_left</i></button>',
+            nextArrow: '<button class="ui next  button"><i class="material-icons">chevron_right</i></button>',
+            // centerMode: true,
+            responsive: [{
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 1
+                }
+            }]
+        })
 
 
     /**
@@ -151,9 +198,23 @@
                         content: '.content'
                     }
                 })
+
+
+            $('.ui.sub.navbar .content')
+                .addClass('accordion')
+                .accordion({
+                    selector: {
+                        title: '.header',
+                        trigger: '.header',
+                        content: '.menu'
+                    }
+                })
         },
         unmatch() {
             $('.ui.bottom')
+                .removeClass('accordion')
+
+            $('.ui.sub.navbar .content')
                 .removeClass('accordion')
         }
     })

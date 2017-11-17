@@ -1,9 +1,17 @@
-.ui.accordion {
+.accordion {
     .header {
         cursor: pointer;
     }
 
     .content {
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+
+    .menu {
         display: none;
 
         &.active {
