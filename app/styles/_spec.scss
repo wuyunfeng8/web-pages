@@ -1,0 +1,23 @@
+.ui.spec{
+    background: #fff;
+    padding: 8% 4% 12% 4%;
+
+    .highlight{
+        margin-bottom: 6%;
+    }
+
+    .details{
+        .header{
+            font-size: 20px;
+            margin-bottom: 32px;
+            text-transform: uppercase;
+        }
+
+        .list{
+            .item{
+                margin-bottom: 8px;
+                color: rgba(0, 0, 0, 0.5);
+            }
+        }
+    }
+}
